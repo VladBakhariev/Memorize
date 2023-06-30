@@ -19,28 +19,35 @@ struct ContentView: View {
                 }
             }
             HStack{
-                Button(action: {
-                    emojiCount -= 1
-                }, label: {
-                    VStack{
-                        Text("Remove")
-                        Text("Card")
-                    }
-                })
+                remove
                 Spacer()
-                Button(action: {
-                    emojiCount += 1
-                }, label: {
-                    VStack{
-                        Text("Add")
-                        Text("Card")
-                    }
-                })
+                add
             }
             .padding(.horizontal)
         }
         .padding(.horizontal)
         .foregroundColor(/*@START_MENU_TOKEN@*/.purple/*@END_MENU_TOKEN@*/)
+    }
+    
+    var remove: some View {
+        Button(action: {
+            emojiCount -= 1
+        }, label: {
+            VStack{
+                Text("Remove")
+                Text("Card")
+            }
+        })
+    }
+    var add: some View {
+        Button(action: {
+            emojiCount += 1
+        }, label: {
+            VStack{
+                Text("Add")
+                Text("Card")
+            }
+        })
     }
 }
 
