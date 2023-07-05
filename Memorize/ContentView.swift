@@ -22,38 +22,11 @@ struct ContentView: View {
                 }
             }
             .foregroundColor(/*@START_MENU_TOKEN@*/.purple/*@END_MENU_TOKEN@*/)
-            Spacer()
-            HStack{
-                remove
-                Spacer()
-                add
-            }
-            .font(.largeTitle)
-            .padding(.horizontal)
         }
         .padding(.horizontal)
     }
-    
-    var remove: some View {
-        Button {
-            if emojiCount > 1 {
-                emojiCount -= 1
-            }
-        } label: {
-            Image(systemName: "minus.circle.fill")
-        }
-    }
-    var add: some View {
-        Button {
-            if emojiCount < emojis.count {
-                emojiCount += 1
-            }
-        } label: {
-            Image(systemName: "plus.circle.fill")
-        }
-    }
 }
-
+    
 struct CardView: View {
     var content: String
     @State var isFaceUp: Bool = true
@@ -74,16 +47,6 @@ struct CardView: View {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
